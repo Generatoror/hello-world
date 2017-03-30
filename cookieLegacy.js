@@ -55,7 +55,7 @@ func:function()
 	
 	//Finally, we add a trait that amplifies the benefits of consuming hot sauce; it will take on average 20 years to appear once the conditions (knowing the "Hot sauce preparing" tech) is fulfilled.
 	new G.Trait({
-		name:'Grandma's love',
+		name:'Grandma´s love',
 		desc:'@[elder]s now give you cookies',
 		icon:[1,1,'spicySheet'],
 		chance:5,
