@@ -61,7 +61,7 @@ func:function()
 		chance:5,
 		req:{'cookie preparing':true},
 		effects:[
-			{type:'function',func:function(){G.getDict('elder').effects.push({type:'convert',from:{'wheat':2,'water':1},into:{'cookie':1},every:25,mode:'cookie'})},//this is a custom function executed when we gain the trait
+			{type:'function',func:function(){G.getDict('elder').effects.push({type:'convert',from:{'wheat':2,'water':1},into:{'cookie':1},every:25,mode:'cookie';})},//this is a custom function executed when we gain the trait
 		],
 	});
 	
