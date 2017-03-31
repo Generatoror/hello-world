@@ -62,7 +62,7 @@ func:function()
 		req:{'cookie preparing':true},
 		effects:[
 			{type:'function',func:function(){G.getDict('elder').effects.push({type:'convert',from:{'wheat':2,'water':1},into:{'cookie':1},every:25,mode:'cookie'})},//this is a custom function executed when we gain the trait
-		,
+		
 	});
 	
 	//There are many other ways of adding and changing content; refer to /data.js, the default dataset, if you want to see how everything is done in the base game. Good luck!
