@@ -3,7 +3,7 @@ name:'Test mod',
 author:'????',
 desc:'A simple test mod that adds cookies',
 engineVersion:1,
-manifest:'https://rawgit/Generatoror/hello-world/master/catManifest.js',
+manifest:'https://rawgit.com/Generatoror/hello-world/master/catManifest.js',
 requires:['Default dataset*'],
 sheets:{'spicySheet':'img/spicyModIconSheet.png'},//custom stylesheet (note : broken in IE and Edge for the time being)
 func:function()
