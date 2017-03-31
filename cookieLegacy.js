@@ -30,14 +30,14 @@ func:function()
 		//adding hot pepper as something that can be gathered from grass
 	G.getDict('grass').res['gather']['wheat']=3;
 		//adding a new mode to artisans so they can make hot sauce from hot peppers
-	G.getDict('furnance').modes['cookie']={name:'Make cookies',desc:'Turn 5 [wheat] and 2 [water] into 1 [cookie].',req:{'cookie preparing':true}};
+	G.getDict('furnace').modes['cookie']={name:'Make cookies',desc:'Turn 5 [wheat] and 2 [water] into 1 [cookie].',req:{'cookie preparing':true}};
 		//adding a new effect to artisans that handles the actual hot sauce preparing and is only active when the unit has the mode "hot sauce"
-	G.getDict('furnance').effects.push({type:'convert',from:{'wheat':5,'water':2},into:{'cookie':2},every:5,mode:'cookie'});
+	G.getDict('furnace').effects.push({type:'convert',from:{'wheat':5,'water':2},into:{'cookie':2},every:5,mode:'cookie'});
 	
 	//Then we add a new technology which is required by the artisans to gain access to the "hot sauce" mode :
 	new G.Tech({
 		name:'cookie preparing',
-		desc:'@[furnance]s can now produce [cookie]s from [wheat] and [water]//This special recipe allows a skilled craftsman to fully express the complex aromas present in hot peppers.',
+		desc:'@[furnace]s can now produce [cookie]s from [wheat] and [water]//This special recipe allows a skilled craftsman to fully express the complex aromas present in hot peppers.',
 		icon:[0,1,'spicySheet'],
 		cost:{'insight':15},
 		req:{'cooking':true},
