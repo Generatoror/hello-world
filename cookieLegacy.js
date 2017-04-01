@@ -1,6 +1,6 @@
 G.AddData({
 name:'Test mod',
-author:'????',
+author:'Genertoror',
 desc:'A simple test mod that adds cookies',
 engineVersion:1,
 manifest:'https://rawgit.com/Generatoror/hello-world/master/catManifest.js',
@@ -27,9 +27,9 @@ func:function()
 	});
 	
 	//Then we augment the base data to incorporate our new resources :
-		//adding hot pepper as something that can be gathered from grass
+		//adding wheat as something that can be gathered from grass
 	G.getDict('grass').res['gather']['wheat']=3;
-		//adding a new mode to artisans so they can make hot sauce from hot peppers
+		//adding a new mode to furnace so they can make hot sauce from hot peppers
 	G.getDict('furnace').modes['cookie']={name:'Make cookies',desc:'Turn 5 [wheat] and 2 [water] into 1 [cookie].',req:{'cookie preparing':true}};
 		//adding a new effect to artisans that handles the actual hot sauce preparing and is only active when the unit has the mode "hot sauce"
 	G.getDict('furnace').effects.push({type:'convert',from:{'wheat':5,'water':2},into:{'cookie':2},every:5,mode:'cookie'});
