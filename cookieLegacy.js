@@ -3,7 +3,6 @@ name:'Test mod',
 author:'Genertoror',
 desc:'A simple test mod that adds cookies',
 engineVersion:1,
-manifest:'https://rawgit.com/Generatoror/hello-world/master/catManifest.js',
 requires:['Default dataset*'],
 sheets:{'cookieSheet':'https://raw.githubusercontent.com/Generatoror/hello-world/master/sprits.png'},//custom stylesheet (note : broken in IE and Edge for the time being)
 func:function()
