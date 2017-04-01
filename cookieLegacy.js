@@ -5,14 +5,14 @@ desc:'A simple test mod that adds cookies',
 engineVersion:1,
 manifest:'https://rawgit.com/Generatoror/hello-world/master/catManifest.js',
 requires:['Default dataset*'],
-sheets:{'spicySheet':'https://raw.githubusercontent.com/Generatoror/hello-world/master/sprits.png'},//custom stylesheet (note : broken in IE and Edge for the time being)
+sheets:{'cookieSheet':'https://raw.githubusercontent.com/Generatoror/hello-world/master/sprits.png'},//custom stylesheet (note : broken in IE and Edge for the time being)
 func:function()
 {
 
 	new G.Res({
 		name:'wheat',
 		desc:'[wheat] is not very tasty nor healthy',
-		icon:[0,0,'spicySheet'],
+		icon:[0,0,'cookieSheet'],
 		turnToByContext:{'eat':{'health':0.01,'happiness':0.01},'decay':{'spoiled food':0.5}},//this basically translates to : "when eaten, generate some health and happiness; when rotting, turn into either nothing or some spoiled food"
 		partOf:'food',
 		category:'food',
@@ -20,7 +20,7 @@ func:function()
 	new G.Res({
 		name:'cookie',
 		desc:'Made from [water] and the [wheat], this [cookie] and gets popular easily.',
-		icon:[1,0,'spicySheet'],
+		icon:[1,0,'cookieSheet'],
 		turnToByContext:{'eat':{'health':0.005,'happiness':1},'decay':{'cookie':0.95,'spoiled food':0.05}},//that last part makes hot sauce effectively have a 95% chance of simply not rotting (in effect, it decays into itself)
 		partOf:'food',
 		category:'food',
@@ -45,7 +45,7 @@ func:function()
         new G.Tech({
 		name:'healthy cookies',
 		desc:'@[cookie]s are now twice as healthy.',
-		icon:[0,1,'spicySheet'],
+		icon:[0,1,'cookieSheet'],
 		cost:{'insight':15},
 		req:{'cooking':true},
                 effects:[
@@ -57,7 +57,7 @@ func:function()
 	new G.Trait({
 		name:'Grandma´s love',
 		desc:'@[elder]s now give you cookies',
-		icon:[1,1,'spicySheet'],
+		icon:[1,1,'cookieSheet'],
 		chance:5,
 		req:{'cookie preparing':true},
 		effects:[
