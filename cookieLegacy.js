@@ -34,11 +34,11 @@ func:function()
 		//adding a new effect to artisans that handles the actual hot sauce preparing and is only active when the unit has the mode "hot sauce"
 	G.getDict('furnace').effects.push({type:'convert',from:{'wheat':5,'water':2},into:{'cookie':2},every:5,mode:'cookie'});
 	
-	//Then we add a new technology which is required by the artisans to gain access to the "hot sauce" mode :
+	
 	new G.Tech({
 		name:'cookie preparing',
 		desc:'@[furnace]s can now produce [cookie]s from [wheat] and [water]//This special recipe allows a skilled craftsman to fully express the complex aromas present in hot peppers.',
-		icon:[0,1,'spicySheet'],
+		icon:[0,1,'cookieSheet'],
 		cost:{'insight':15},
 		req:{'cooking':true},
 	});
@@ -47,13 +47,22 @@ func:function()
 		desc:'@[cookie]s are now twice as healthy.',
 		icon:[0,1,'cookieSheet'],
 		cost:{'insight':15},
-		req:{'cooking':true},
+		req:{'cokie preparing':true},
+                effects:[
+			{type:'function',func:function(){G.getDict('cookie').turnToByContext['eat']['happiness']=0.5;}},//this is a custom function executed when we gain the trait
+		],
+	});
+	        new G.Tech({
+		name:'golden cookies',
+		desc:'@[cookie]s are now twice as healthy.',
+		icon:[0,1,'cookieSheet'],
+		cost:{'insight':25, 'culture':10},
+		req:{'cookie preparing':true},
                 effects:[
 			{type:'function',func:function(){G.getDict('cookie').turnToByContext['eat']['health']=0.1;}},//this is a custom function executed when we gain the trait
 		],
 	});
 	
-	//Finally, we add a trait that amplifies the benefits of consuming hot sauce; it will take on average 20 years to appear once the conditions (knowing the "Hot sauce preparing" tech) is fulfilled.
 	new G.Trait({
 		name:'Grandma´s love',
 		desc:'@[elder]s now give you cookies',
@@ -65,6 +74,5 @@ func:function()
 	        ],
 	});
 			
-	//There are many other ways of adding and changing content; refer to /data.js, the default dataset, if you want to see how everything is done in the base game. Good luck!
 }
 });
